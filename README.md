@@ -14,13 +14,13 @@
 
 <!-- Social Badges -->
 <a href="https://github.com/syed-ifham">
-  <img src="https://img.shields.io/badge/GitHub-ifhamahmed-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1b2e&color=7aa2f7" alt="GitHub"/>
+  <img src="https://img.shields.io/badge/GitHub-syedifham-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1b2e&color=7aa2f7" alt="GitHub"/>
 </a>
 <a href="https://linkedin.com/in/syedifham">
-  <img src="https://img.shields.io/badge/LinkedIn-ifhamahmed-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=1a1b2e&color=0A66C2" alt="LinkedIn"/>
+  <img src="https://img.shields.io/badge/LinkedIn-syedifham-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=1a1b2e&color=0A66C2" alt="LinkedIn"/>
 </a>
 <a href="https://leetcode.com/ifham786">
-  <img src="https://img.shields.io/badge/LeetCode-ifhamahmed-FFA116?style=for-the-badge&logo=leetcode&logoColor=white&labelColor=1a1b2e&color=FFA116" alt="LeetCode"/>
+  <img src="https://img.shields.io/badge/LeetCode-ifham786-FFA116?style=for-the-badge&logo=leetcode&logoColor=white&labelColor=1a1b2e&color=FFA116" alt="LeetCode"/>
 </a>
 <a href="mailto:syedifham300@gmail.com">
   <img src="https://img.shields.io/badge/Email-Contact_Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=1a1b2e&color=EA4335" alt="Email"/>
