@@ -4,8 +4,6 @@
 <!--                        HERO SECTION                            -->
 <!-- ════════════════════════════════════════════════════════════════ -->
 
-<img src="assets/banner.png" alt="Syed Ifham Hussain Banner" width="100%"/>
-
 <br/>
 
 <!-- Typing SVG Animation -->
