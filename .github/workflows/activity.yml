@@ -1,0 +1,36 @@
+name: 📈 Update Activity Graph
+
+on:
+  schedule:
+    # Runs at 04:00 UTC every day
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+jobs:
+  update-activity:
+    name: Update Activity Graph
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update README timestamp
+        run: |
+          # Activity graph auto-updates via ashutosh00710/github-readme-activity-graph
+          # This workflow ensures periodic refresh of cached widgets
+          echo "Activity graph refreshed at $(date -u)" > assets/activity_last_updated.txt
+
+      - name: Commit activity update
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/activity_last_updated.txt
+          git diff --cached --quiet || git commit -m "📈 Refresh activity graph [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

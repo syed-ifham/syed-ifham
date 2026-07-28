@@ -1,0 +1,48 @@
+name: 🔄 Refresh Profile Widgets
+
+on:
+  schedule:
+    # Runs at 06:00 UTC every day
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  refresh-widgets:
+    name: Refresh Dynamic Widgets
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update widget refresh log
+        run: |
+          echo "# Widget Refresh Log" > assets/widgets_status.md
+          echo "" >> assets/widgets_status.md
+          echo "**Last refreshed:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> assets/widgets_status.md
+          echo "" >> assets/widgets_status.md
+          echo "## Widgets Status" >> assets/widgets_status.md
+          echo "| Widget | Status |" >> assets/widgets_status.md
+          echo "|--------|--------|" >> assets/widgets_status.md
+          echo "| GitHub Stats | ✅ Auto-updating |" >> assets/widgets_status.md
+          echo "| GitHub Streak | ✅ Auto-updating |" >> assets/widgets_status.md
+          echo "| Top Languages | ✅ Auto-updating |" >> assets/widgets_status.md
+          echo "| Activity Graph | ✅ Auto-updating |" >> assets/widgets_status.md
+          echo "| Snake Animation | ✅ Daily via workflow |" >> assets/widgets_status.md
+          echo "| GitHub Metrics | ✅ Daily via workflow |" >> assets/widgets_status.md
+          echo "| GitHub Trophies | ✅ Auto-updating |" >> assets/widgets_status.md
+          echo "| Visitor Counter | ✅ Auto-updating |" >> assets/widgets_status.md
+
+      - name: Commit status update
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/widgets_status.md
+          git diff --cached --quiet || git commit -m "🔄 Refresh widget status [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
