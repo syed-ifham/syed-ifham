@@ -220,7 +220,4 @@ open_to: Collaborations, Internships & Full-time roles
 </sub>
 
 <br/><br/>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer&text=&fontSize=0&animation=twinkling" width="100%" alt="Animated footer wave capsule"/>
-
 </div>
